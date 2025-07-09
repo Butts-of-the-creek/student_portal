@@ -1,0 +1,134 @@
+/* General body styling for a clean look */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #534666;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container for the forms and profile pages */
+
+.container {
+    background-color: #C2C8C5;
+    padding: 2rem;
+    border-radius: 30px;
+    box-shadow: 1px 4px 8px purple;
+    width: 75%;
+    max-width: 500px;
+    box-sizing: border-box;
+    background-color: 80%; 
+}
+
+/* Styling for all headings */
+
+h2 {
+    text-align: center;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+}
+
+/* Form group styling to space out inputs */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+/* Label styling */
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Input field styling */
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-sizing: border-box; 
+}
+
+/* Button styling */
+.btn {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/*button bg when hovering over*/
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Link styling for navigation (e.g., "Already have an account? Login") */
+.link {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}
+
+/* Error and success message styling */
+.message {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error {
+    background-color: red;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Profile page specific styling */
+.profile-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border: 4px solid #007bff;
+    margin-bottom: 1rem;
+    overflow: none;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.profile-info p strong {
+    color: #555;
+}
