@@ -1,13 +1,13 @@
 <?php
 // --- USER PROFILE SCRIPT ---
-// This page is the main hub for a logged-in user. It displays their profile,
+// This page is the main hub for a *logged-in* user. It displays their profile,
 // allows them to update information, and upload a profile picture.
 
 // Initialize the session
 session_start();
 
 // **SECURITY CHECK**: Check if the user is logged in.
-// If the 'loggedin' session variable is not set or is not true,
+// If our 'loggedin' session variable is not set or is not true,
 // the user is not authenticated. Redirect them to the login page.
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: login.php");
@@ -22,10 +22,10 @@ $name = $surname = $email = $contact_num = $module_code = $profile_picture = "";
 $update_success = "";
 $errors = [];
 
-// Get the user's ID from the session variable. This is secure because the session is server-side.
+// We get the user's ID from the session variable. This is secure because the session is server-side.
 $user_id = $_SESSION["id"];
 
-// --- HANDLE FORM SUBMISSION FOR PROFILE UPDATE ---
+// --- HANDLING OUR FORM SUBMISSIONS FOR PROFILE UPDATE ---
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if the 'update_profile' button was clicked.
@@ -56,12 +56,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
-    // --- HANDLE PROFILE PICTURE UPLOAD ---
-    // Check if the 'upload_picture' button was clicked and a file was actually uploaded.
-    if (isset($_POST['upload_picture']) && isset($_FILES["profile_pic"]) && $_FILES["profile_pic"]["error"] == 0) {
+    // --- HANDLING THE PROFILE PICTURE UPLOAD ---
+    // 1st we Check if the 'upload_picture' button was clicked and a file was actually uploaded.
+   
+        if (isset($_POST['upload_picture']) && isset($_FILES["profile_pic"]) && $_FILES["profile_pic"]["error"] == 0) {
         
-        $target_dir = "uploads/"; // The directory where files will be stored.
-        // Create a unique filename to prevent overwriting files. We use the user's ID and the original filename.
+        $target_dir = "uploads/"; // The directory where the pics will be stored.
+        // Always Create a unique filename to prevent overwriting files. 
+
         $target_file = $target_dir . $user_id . "_" . basename($_FILES["profile_pic"]["name"]);
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
